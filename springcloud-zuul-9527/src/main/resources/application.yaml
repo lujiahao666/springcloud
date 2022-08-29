@@ -1,0 +1,21 @@
+server:
+  port: 9527
+spring:
+  application:
+    name: spring-zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+    instance:
+      instance-id: zuul-9527
+zuul:
+  routes:
+    mydept.serviceID: sprinigcloud-provider-dept #为提供者的application.name
+    mydept.path: /mydept/**
+  ignored-services: sprinigcloud-provider-dept #不能使用这个路径访问
+  # zuul就是对我们的请求的路由和过滤
+  #我们最开始有多个提供者，访问每个提供者的业务通过不同的url进行访问，我们现在配置了路由网关后，通过设置ignored-services忽略我们之前设置的
+  #application.name访问名称，设置了一个新的访问路径来进行访问，之后存在这个eureka注册中心下的所有提供者，想访问服务，都将通过设置的统一路径访问
+  #将真实项目全部隐藏起来
+  prefix: #前缀
