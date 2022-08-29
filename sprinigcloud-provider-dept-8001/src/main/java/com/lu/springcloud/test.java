@@ -19,7 +19,7 @@ public class test {
     @Test
     public void test(){
         System.out.println(dataSource.getClass());
-       /* List<Dept> depts = deptService.queryAll();
+       /*List<Dept> depts = deptService.queryAll();
         for (Dept dept : depts) {
             System.out.println(dept);
         }*/

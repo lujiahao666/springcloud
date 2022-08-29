@@ -9,14 +9,12 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>sprinigcloud-provider-dept-8001</artifactId>
+    <groupId>com.lu</groupId>
+    <artifactId>sprinigcloud-provider-dept-8003</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
-        <junit.version>4.12</junit.version>
-        <log4j.version>1.2.17</log4j.version>
-        <lombok.version>1.16.18</lombok.version>
     </properties>
     <dependencies>
         <!--我们需要拿到实体类，所以我们配置api module-->
@@ -67,12 +65,5 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
-            <version>2.1.0.RELEASE</version>
-        </dependency>
     </dependencies>
-
 </project>

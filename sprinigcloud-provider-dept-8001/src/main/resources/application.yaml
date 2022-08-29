@@ -2,7 +2,8 @@ server:
   port: 8001
 mybatis:
   type-aliases-package: com.lu.springcloud.pojo
-  mapper-location: classpath:mybatis/mapper/*.xml
+  mapper-location: classpath:mapper/DeptMapper.xml
+  config-location: classpath:mapper/mybatis-config.xml
 
 spring:
   application:
@@ -13,4 +14,14 @@ spring:
     url: jdbc:mysql://localhost:3306/db01?serverTimezone=UTC&&useSSL=false&&useUnicode=true&&characterEncoding=UTF-8
     password: 123456
     username: root
+# eureka配置 服务注册到哪里
+eureka:
+  client:
+    service-url: #发布到注册中心中
+      #defaultZone: http://localhost:7001/eureka/,http://localhost:7002/eureka/,http://localhost:7003/eureka/
+      defaultZone: http://localhost:7001/eureka/
+  instance:
+    instance-id: springcloud-provider-dept-8001 #修改eureka上默认描述信息
+
+
 
